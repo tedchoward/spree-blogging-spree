@@ -6,7 +6,7 @@
 
 <div class="body">
 	<%= link_to(image_tag(e.blog_entry_image.attachment.url(:normal)), e) if e.blog_entry_image %>
-  <%= raw e.body %>
+  <%= raw e.body_html %>
 </div>
 
 <% unless e.tag_list.empty? %>

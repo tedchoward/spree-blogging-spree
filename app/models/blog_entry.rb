@@ -1,4 +1,5 @@
 require "is_taggable"
+require 'rdiscount'
 
 class BlogEntry < ActiveRecord::Base
   is_taggable :tags
@@ -23,6 +24,10 @@ class BlogEntry < ActiveRecord::Base
 
   def self.by_tag(name)
     find(:all, :select => 'DISTINCT blog_entries.*', :joins => [:taggings, :tags], :conditions => {'tags.name' => name })
+  end
+  
+  def body_html
+    RDiscount.new(body, :smart, :filter_html).to_html
   end
 
   private
@@ -55,5 +60,6 @@ class BlogEntry < ActiveRecord::Base
     # nicEdit field contains "<br>" when blank
     errors.add(:body, "can't be blank") if body =~ /^<br>$/
   end
+
 
 end

@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency('spree_core', '>= 0.30.0')
   s.add_dependency('is_taggable')
+  s.add_dependency('rdiscount')
 end

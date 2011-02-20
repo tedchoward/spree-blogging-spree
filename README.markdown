@@ -1,4 +1,5 @@
 This fork updates extension to work with Spree 0.30 and Rails 3. Installation via gem (bundler)
+It also swaps out a Markdown for a rich text editor.
 
 [BloggingSpree](http://github.com/jaymendoza/spree-blogging-spree/)
 ---------------
